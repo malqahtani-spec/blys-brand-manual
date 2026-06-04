@@ -1,309 +1,388 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <title>BLY'S — Brand Manual</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --green:#002D12; --green2:#01481F; --green3:#063b1c; --orange:#FF9518;
-  --white:#F2EEE8; --black:#0B0B0B; --gray:#8A8A8A;
-  --display:'Anton',sans-serif; --body:'Inter',sans-serif; --ar:'Cairo',sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.5}
-*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-img{display:block;max-width:100%}
-.wrap{max-width:1240px;margin:0 auto;padding:0 6vw}
-section{position:relative}
-.disp{font-family:var(--display);text-transform:uppercase;font-weight:400;line-height:.9;letter-spacing:.005em}
+:root{--green:#002D12;--green2:#01481F;--orange:#FF9518;--white:#F2EEE8;--black:#0B0B0B;--gray:#8A8A8A;--ink:#15140f;
+--display:'Anton',sans-serif;--body:'Inter',sans-serif;--ar:'Cairo',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:1280px 720px;margin:0}
+body{font-family:var(--body);background:#222}
+.page{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto}
+.light{background:var(--white);color:var(--ink)}
+.green{background:var(--green);color:var(--white)}
+.greengrad{background:linear-gradient(150deg,var(--green2),var(--green) 60%,#001a0a);color:var(--white)}
+.charcoal{background:var(--black);color:var(--white)}
+.pad{padding:80px 96px;flex:1;display:flex;flex-direction:column}
+.num{font-family:var(--body);font-weight:700;letter-spacing:.34em;text-transform:uppercase;font-size:13px;color:var(--orange);margin-bottom:18px}
+.title{font-family:var(--display);text-transform:uppercase;font-weight:400;line-height:.92;letter-spacing:.01em}
+.t-xl{font-size:120px;line-height:.82}.t-lg{font-size:74px}.t-md{font-size:52px}.t-sm{font-size:34px}
 .accent{color:var(--orange)}
-.kicker{font-weight:700;letter-spacing:.34em;text-transform:uppercase;font-size:.66rem;color:var(--orange);margin-bottom:1.2rem}
-.tab{width:60px;height:6px;background:var(--orange);margin:1.2rem 0}
-.lead{font-size:1.15rem;color:var(--gray);max-width:620px;line-height:1.65}
-.grain::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:9;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-/* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 6vw;background:linear-gradient(180deg,rgba(11,11,11,.85),transparent);backdrop-filter:blur(6px);transition:.4s}
-nav.solid{background:var(--green);box-shadow:0 1px 0 rgba(242,238,232,.08)}
-nav .brand{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em}
-nav .links{display:flex;gap:1.6rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
-nav .links a{color:var(--white);text-decoration:none;opacity:.7;transition:.25s}
-nav .links a:hover{opacity:1;color:var(--orange)}
-@media(max-width:820px){nav .links{display:none}}
-/* hero */
-.hero{height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden}
-.hero .bg{position:absolute;inset:0}
-.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
-.hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,45,18,.94) 0%,rgba(0,45,18,.6) 45%,rgba(11,11,11,.35) 100%)}
-.hero .inner{position:relative;z-index:2}
-.hero h1{font-family:var(--display);font-size:clamp(5rem,17vw,15rem);line-height:.78;text-transform:uppercase}
-.hero .sub{margin-top:1.8rem;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gray)}
-.scrollcue{position:absolute;bottom:2.2rem;left:6vw;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gray);z-index:3;animation:bob 2s infinite}
-@keyframes bob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
-/* generic section */
-.sec{padding:9rem 0}
-.sec.green{background:var(--green)}
-.sec.greengrad{background:linear-gradient(160deg,var(--green2),var(--green) 55%,#001d0c)}
-.sec.dark{background:var(--black)}
-.h2{font-size:clamp(2.4rem,5vw,4rem);max-width:14ch}
-/* reveal — visible by default; only hidden once JS confirms it can reveal them (capture/print safe) */
-.rv{transition:.9s cubic-bezier(.2,.7,.2,1)}
-body.js .rv{opacity:0;transform:translateY(34px)}
-body.js .rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
-@media print{ body.js .rv{opacity:1!important;transform:none!important} section{break-inside:avoid} }
-/* grids */
-.grid{display:grid;gap:1.6rem}
-.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr}}
-.card{background:var(--green2);border-radius:14px;padding:2rem;border:1px solid rgba(242,238,232,.07)}
-.card .n{font-family:var(--display);font-size:2rem;color:var(--orange)}
-.card h4{font-family:var(--display);text-transform:uppercase;font-size:1.25rem;margin:.5rem 0 .7rem;font-weight:400}
-.card p{color:var(--gray);font-size:.95rem}
-/* color */
-.sw{height:200px;border-radius:12px;display:flex;align-items:flex-end;padding:1.1rem;border:1px solid rgba(242,238,232,.12)}
-.sw .nm{font-family:var(--display);text-transform:uppercase;font-size:1.05rem}
-.sw .hx{font-size:.72rem;letter-spacing:.1em;opacity:.85}
-.ratio{display:flex;height:130px;border-radius:12px;overflow:hidden;margin-top:1.4rem}
-.ratio div{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.9rem}
-/* type */
-.typebig{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.6rem,7vw,6rem);line-height:.88}
-/* product stage (transparent, NO shadow) */
-.stagecard{background:radial-gradient(circle at 50% 40%,#0c6536 0%,var(--green2) 48%,#001a0a 100%);
-  border-radius:16px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:12%;overflow:hidden;position:relative}
-.stagecard img{max-width:100%;max-height:100%;object-fit:contain}
-.stagecard .lab{position:absolute;left:1.1rem;bottom:1rem;font-family:var(--display);text-transform:uppercase;font-size:1rem;letter-spacing:.02em}
-/* photo gallery */
-.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.photos div{aspect-ratio:3/4;border-radius:12px;overflow:hidden}
-.photos img{width:100%;height:100%;object-fit:cover;transition:.6s}
-.photos div:hover img{transform:scale(1.08)}
-@media(max-width:820px){.photos{grid-template-columns:repeat(2,1fr)}}
-/* split */
-.split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem}
-@media(max-width:820px){.split{grid-template-columns:1fr}}
-.split .img{aspect-ratio:4/5;border-radius:14px;overflow:hidden}
-.split .img img{width:100%;height:100%;object-fit:cover}
-/* list rows */
-.rowline{display:flex;justify-content:space-between;padding:1.1rem 0;border-bottom:1px solid rgba(242,238,232,.1)}
-.rowline .city{font-family:var(--display);text-transform:uppercase;font-size:1.3rem}
-.rowline .meta{color:var(--gray);font-size:.85rem;text-align:right}
-/* closing */
-.closing{height:92vh;min-height:560px;display:flex;align-items:center;overflow:hidden}
-.closing .bg{position:absolute;inset:0}
-.closing .bg img{width:100%;height:100%;object-fit:cover}
-.closing .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,45,18,.93),rgba(0,45,18,.55))}
-footer{background:var(--black);padding:2.4rem 6vw;display:flex;justify-content:space-between;color:var(--gray);font-size:.75rem;letter-spacing:.1em}
-.taglist{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
-.taglist span{border:1px solid rgba(242,238,232,.2);border-radius:30px;padding:.4rem 1rem;font-size:.78rem;font-weight:600}
-.do2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem}
-@media(max-width:820px){.do2{grid-template-columns:1fr}}
-.do2 .box{border-radius:14px;padding:1.8rem}
-.do2 .yes{background:var(--green2)} .do2 .no{background:#3a1212}
-.do2 h5{font-family:var(--display);text-transform:uppercase;font-size:1.1rem;margin-bottom:1rem}
-.do2 li{list-style:none;color:var(--gray);padding:.32rem 0;font-size:.92rem}
-.do2 .yes li::before{content:"→ ";color:var(--orange)} .do2 .no li::before{content:"✗ ";color:#e06a5a}
-</style>
-</head>
-<body class="grain">
+.desc{font-size:16px;line-height:1.7;color:var(--gray);max-width:560px}
+.light .desc{color:#5b5950}
+.foot{position:absolute;left:96px;right:96px;bottom:42px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray)}
+.full{position:absolute;inset:0}.full img{width:100%;height:100%;object-fit:cover}
+.veil{position:absolute;inset:0}
+.tab{width:74px;height:7px;background:var(--orange);margin:26px 0}
+/* color columns (Hattab signature) */
+.cols{display:flex;gap:20px;flex:1;margin-top:30px}
+.col{flex:1;border-radius:6px;position:relative;display:flex;align-items:flex-end;padding:22px;border:1px solid rgba(0,0,0,.06)}
+.col .nm{font-family:var(--display);text-transform:uppercase;font-size:19px}.col .hx{font-size:12px;letter-spacing:.12em;margin-top:4px;opacity:.9}
+.ratio{display:flex;height:150px;border-radius:8px;overflow:hidden;margin-top:34px}
+.ratio div{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:30px}
+/* pillar columns */
+.pcols{display:flex;gap:22px;flex:1;margin-top:30px}
+.pcol{flex:1;background:#fff;border-radius:10px;padding:30px;display:flex;flex-direction:column;border:1px solid #e7e3d8}
+.green .pcol,.greengrad .pcol{background:var(--green2);border-color:transparent}
+.pcol .pn{font-family:var(--display);font-size:46px;color:var(--orange)}
+.pcol h4{font-family:var(--display);text-transform:uppercase;font-size:23px;margin:14px 0 12px;font-weight:400}
+.pcol p{font-size:14px;line-height:1.55;color:#5b5950}.green .pcol p,.greengrad .pcol p{color:#cfd8cf}
+/* product stage (NO shadow) */
+.stages{display:flex;gap:22px;flex:1;margin-top:26px}
+.stage{flex:1;background:radial-gradient(circle at 50% 42%,#0c6536,#01481F 50%,#001a0a);border-radius:12px;position:relative;display:flex;align-items:center;justify-content:center;padding:3%}
+.stage img{max-width:100%;max-height:100%;object-fit:contain}
+.stage.tall img{max-height:118%;transform:scale(1.18)}
+.stage .lab{position:absolute;left:18px;bottom:16px;font-family:var(--display);text-transform:uppercase;font-size:17px;color:var(--white)}
+/* split spec */
+.spec{display:flex;gap:60px;flex:1;align-items:center;margin-top:24px}
+.spec .stagebig{flex:1.1;background:radial-gradient(circle at 50% 42%,#0c6536,#01481F 52%,#001a0a);border-radius:14px;height:100%;display:flex;align-items:center;justify-content:center;padding:3%}
+.spec .stagebig img{max-width:100%;max-height:100%;object-fit:contain}
+.spec .rows{flex:1}
+.srow{margin-bottom:20px}.srow .l{font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:var(--orange);margin-bottom:6px}.srow .v{font-size:16px;line-height:1.4}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.tags span{border:1px solid rgba(0,0,0,.18);border-radius:30px;padding:7px 16px;font-size:13px;font-weight:600}
+.green .tags span,.charcoal .tags span,.greengrad .tags span{border-color:rgba(242,238,232,.25)}
+.idx{display:grid;grid-template-columns:1fr 1fr;gap:0 70px;margin-top:26px}
+.idxrow{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.light .idxrow{border-color:rgba(0,0,0,.1)}
+.idxrow .in{font-family:var(--display);color:var(--orange);font-size:20px;min-width:44px}.idxrow .it{font-weight:600;font-size:15px;align-self:center}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;flex:1;margin-top:26px}
+.photos div{border-radius:10px;overflow:hidden}.photos img{width:100%;height:100%;object-fit:cover}
+.do2{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1;margin-top:26px}
+.do2 .box{border-radius:12px;padding:30px}.do2 .yes{background:var(--green2)}.do2 .no{background:#3a1212}
+.do2 h5{font-family:var(--display);text-transform:uppercase;font-size:20px;margin-bottom:16px}.do2 li{list-style:none;color:#cfd8cf;padding:7px 0;font-size:15px}
+.do2 .yes li::before{content:"→ ";color:var(--orange)}.do2 .no li::before{content:"✗ ";color:#e06a5a}
+.rowline{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.rowline .city{font-family:var(--display);text-transform:uppercase;font-size:24px}.rowline .meta{color:var(--gray);font-size:14px;align-self:center}
+.bignum{font-family:var(--display);font-size:200px;line-height:.8;color:var(--orange)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:24px}
+.two p{font-size:15px;line-height:1.7;color:#5b5950}
+.center{justify-content:center}
+</style></head><body>
 
-<nav id="nav">
-  <div class="brand">BLY<span class="accent">'</span>S</div>
-  <div class="links">
-    <a href="#story">Story</a><a href="#identity">Identity</a><a href="#color">Color</a>
-    <a href="#type">Type</a><a href="#photo">Photography</a><a href="#fitout">Fit-Out</a><a href="#locations">Locations</a>
-  </div>
-</nav>
+<!-- 1 COVER -->
+<div class="page charcoal"><div class="full"><img src="img/ext.jpg"></div>
+<div class="veil" style="background:linear-gradient(90deg,rgba(0,45,18,.92),rgba(0,45,18,.5) 50%,rgba(11,11,11,.3))"></div>
+<div class="pad" style="position:relative;justify-content:center">
+<div class="num">Brand Guidelines &amp; Identity Manual · 2026</div>
+<div class="title t-xl">BLY<span class="accent">'</span>S</div>
+<div class="tab"></div>
+<div style="font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#cfd8cf">Cheesesteaks · Burgers · Fries &nbsp;|&nbsp; Riyadh &amp; Khobar · Est. 2021</div>
+</div></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="bg"><img src="img/bg0.jpg" alt=""></div>
-  <div class="veil"></div>
-  <div class="wrap inner">
-    <p class="kicker">Brand Guidelines &amp; Identity Manual · 2026</p>
-    <h1>BLY<span class="accent">'</span>S</h1>
-    <div class="tab"></div>
-    <p class="sub">Cheesesteaks · Burgers · Fries &nbsp;|&nbsp; Riyadh &amp; Khobar · Est. 2021</p>
-  </div>
-  <div class="scrollcue">Scroll ↓</div>
-</section>
+<!-- 2 PURPOSE -->
+<div class="page greengrad"><div class="pad center">
+<div class="num">Brand Manual</div>
+<div class="title t-md" style="max-width:18ch">The purpose of this manual is to define the BLY<span class="accent">'</span>S identity — <span class="accent">how we look, speak, and feel</span> across every touchpoint.</div>
+<div class="desc" style="margin-top:28px;color:#cfd8cf">Follow it on every branch, pack, screen, and surface to keep BLY'S consistent, bold, and unmistakably ours.</div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>02</span></div></div>
 
-<!-- STORY -->
-<section id="story" class="sec greengrad">
-  <div class="wrap">
-    <p class="kicker rv">01 · Brand Story</p>
-    <h2 class="disp h2 rv d1">Authentic Philly street food, <span class="accent">built for Saudi Arabia.</span></h2>
-    <p class="lead rv d2" style="margin-top:2rem">Before BLY'S was a restaurant, it was a sandwich shared among family and friends. The founder spent years perfecting an authentic Philly cheesesteak at home. In 2021 the vision was born — no shortcuts, no compromises, Black Angus beef in every sandwich.</p>
-    <div class="grid g3" style="margin-top:3.5rem">
-      <div class="card rv d1"><div class="n">2021</div><h4>The Vision</h4><p>Built around authenticity — done the right way, the Philly way.</p></div>
-      <div class="card rv d2"><div class="n">2022</div><h4>First Branch</h4><p>Qurtoba, Riyadh. Demand confirmed the obsession.</p></div>
-      <div class="card rv d3"><div class="n">2026</div><h4>Six &amp; Beyond</h4><p>Riyadh · Khobar · Dammam · Cloud Kitchen · Formula E.</p></div>
-    </div>
-  </div>
-</section>
+<!-- 3 CONTENTS -->
+<div class="page light"><div class="pad">
+<div class="num">Index</div><div class="title t-lg">Contents</div>
+<div class="idx">
+<div class="idxrow"><span class="in">01</span><span class="it">Brand Story &amp; Foundation</span></div>
+<div class="idxrow"><span class="in">06</span><span class="it">Photography Direction</span></div>
+<div class="idxrow"><span class="in">02</span><span class="it">Brand Identity</span></div>
+<div class="idxrow"><span class="in">07</span><span class="it">Customer Personas</span></div>
+<div class="idxrow"><span class="in">03</span><span class="it">Color System</span></div>
+<div class="idxrow"><span class="in">08</span><span class="it">Environment — Exterior &amp; Interior</span></div>
+<div class="idxrow"><span class="in">04</span><span class="it">Typography</span></div>
+<div class="idxrow"><span class="in">09</span><span class="it">Furniture &amp; Fit-Out</span></div>
+<div class="idxrow"><span class="in">05</span><span class="it">Brand Voice</span></div>
+<div class="idxrow"><span class="in">10</span><span class="it">Packaging · Uniform · Digital · Locations</span></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>03</span></div></div>
 
-<!-- IDENTITY / PILLARS -->
-<section id="identity" class="sec dark">
-  <div class="wrap">
-    <p class="kicker rv">02 · Brand Identity</p>
-    <h2 class="disp h2 rv d1">The Four Pillars</h2>
-    <div class="grid g4" style="margin-top:3rem">
-      <div class="card rv d1"><div class="n">01</div><h4>Authenticity</h4><p>Real ingredients. Real methods. Real Philly inspiration.</p></div>
-      <div class="card rv d2"><div class="n">02</div><h4>Quality</h4><p>100% Black Angus, hand-sliced in-house. No shortcuts.</p></div>
-      <div class="card rv d3"><div class="n">03</div><h4>Urban Culture</h4><p>Riyadh nights, bold environments, street-food energy.</p></div>
-      <div class="card rv d4"><div class="n">04</div><h4>Community</h4><p>Built for sharing — groups, catering, social dining.</p></div>
-    </div>
-  </div>
-</section>
+<!-- 4 DIVIDER 01 -->
+<div class="page charcoal"><div class="full"><img src="img/bg0.jpg"></div>
+<div class="veil" style="background:linear-gradient(90deg,rgba(0,45,18,.94),rgba(0,45,18,.4))"></div>
+<div class="pad" style="position:relative;justify-content:center"><div class="bignum">01</div><div class="tab"></div>
+<div class="title t-md">Brand Story<br>&amp; Foundation</div></div></div>
 
-<!-- COLOR -->
-<section id="color" class="sec green">
-  <div class="wrap">
-    <p class="kicker rv">03 · Color System</p>
-    <h2 class="disp h2 rv d1">The Palette</h2>
-    <div class="grid g4 rv d2" style="margin-top:2.6rem">
-      <div class="sw" style="background:#002D12"><div><div class="nm">Deep Green</div><div class="hx">#002D12</div></div></div>
-      <div class="sw" style="background:#FF9518"><div style="color:#0B0B0B"><div class="nm">Orange</div><div class="hx">#FF9518</div></div></div>
-      <div class="sw" style="background:#F2EEE8"><div style="color:#0B0B0B"><div class="nm">Warm White</div><div class="hx">#F2EEE8</div></div></div>
-      <div class="sw" style="background:#0B0B0B"><div><div class="nm">Charcoal</div><div class="hx">#0B0B0B</div></div></div>
-    </div>
-    <h3 class="disp rv d2" style="font-size:1.5rem;margin-top:3.5rem">Usage Ratio — Green dominant, Orange accent only</h3>
-    <div class="ratio rv d3">
-      <div style="flex:60;background:#002D12;border:1px solid rgba(242,238,232,.15)">60%</div>
-      <div style="flex:25;background:#0B0B0B">25%</div>
-      <div style="flex:10;background:#F2EEE8;color:#0B0B0B">10%</div>
-      <div style="flex:5;background:#FF9518;color:#0B0B0B">5%</div>
-    </div>
-  </div>
-</section>
+<!-- 5 OVERVIEW -->
+<div class="page light"><div class="pad">
+<div class="num">1.1 · Brand Overview</div><div class="title t-md">Built around the cheesesteak itself.</div>
+<div class="two"><p>BLY'S is Saudi Arabia's original cheesesteak-focused restaurant. While competitors offer cheesesteaks as one menu item, BLY'S was built around the cheesesteak itself — premium ingredients, bold flavor, and a genuine connection to Philadelphia's most iconic sandwich.</p>
+<p>From day one the rule was simple: no shortcuts, no compromises, no watered-down version of the original. Carefully selected Black Angus beef, authentic preparation, and an unmistakably urban identity in every branch.</p></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>05</span></div></div>
 
-<!-- TYPOGRAPHY -->
-<section id="type" class="sec dark">
-  <div class="wrap">
-    <p class="kicker rv">04 · Typography</p>
-    <div class="typebig rv d1">HOME OF THE<br>ORIGINAL <span class="accent">PHILLY.</span></div>
-    <p class="rv d2" style="font-size:1.5rem;font-weight:600;margin:1.8rem 0 .4rem">Inter — clean, modern, the workhorse for body &amp; UI.</p>
-    <p class="lead rv d3">Anton for display headlines. Inter for body and interface. Cairo for Arabic — <span style="font-family:var(--ar)">بيليز · الأصلي · طازج من يومه</span>.</p>
-  </div>
-</section>
+<!-- 6 FOUNDER -->
+<div class="page light"><div class="pad">
+<div class="num">1.2 · The Story</div><div class="title t-md">From a home kitchen to Riyadh's streets.</div>
+<div class="two"><p>Before BLY'S was a restaurant, it was a sandwich shared among family and friends. The founder spent years perfecting an authentic Philly cheesesteak at home. The constant question — "when are you making cheesesteaks again?" — became a business. In 2021 the vision was born.</p>
+<div><div class="srow"><div class="l">2022</div><div class="v" style="color:#15140f">First branch — Qurtoba, Riyadh</div></div>
+<div class="srow"><div class="l">2024</div><div class="v" style="color:#15140f">Alyasmin &amp; Hittin, Riyadh</div></div>
+<div class="srow"><div class="l">2025</div><div class="v" style="color:#15140f">Khobar · Dammam · Beast Land</div></div>
+<div class="srow"><div class="l">2026</div><div class="v" style="color:#15140f">Formula E Jeddah · Live Cooking · Olaya Cloud Kitchen</div></div></div></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>06</span></div></div>
 
-<!-- VOICE -->
-<section class="sec greengrad">
-  <div class="wrap">
-    <p class="kicker rv">05 · Brand Voice</p>
-    <h2 class="disp h2 rv d1">Bold but never arrogant.</h2>
-    <div class="taglist rv d2">
-      <span>Home of the Original Philly Cheesesteak</span><span>Made Fresh Daily</span><span>Real Beef. Real Cheese.</span><span>Riyadh Nights</span><span>Street Culture Riyadh</span>
-    </div>
-    <div class="do2">
-      <div class="box yes rv d2"><h5>Sounds like</h5><ul><li>Real beef. Real cheese. Real flavor.</li><li>Loaded with flavor. Built different.</li><li>Made fresh daily.</li></ul></div>
-      <div class="box no rv d3"><h5>Doesn't sound like</h5><ul><li>We think you may enjoy our product.</li><li>The world's most revolutionary sandwich.</li><li>Download our app today.</li></ul></div>
-    </div>
-  </div>
-</section>
+<!-- 7 MISSION -->
+<div class="page green"><div class="pad">
+<div class="num">1.3 · Mission · Vision · Values</div><div class="title t-sm">Why BLY'S exists</div>
+<div class="pcols">
+<div class="pcol"><div class="pn">→</div><h4>Mission</h4><p>Become the most trusted, recognized cheesesteak brand in Saudi Arabia through authentic flavor and consistent quality.</p></div>
+<div class="pcol"><div class="pn">→</div><h4>Vision</h4><p>The leading cheesesteak brand in the GCC and the benchmark for authentic American sandwich culture.</p></div>
+<div class="pcol"><div class="pn">→</div><h4>Purpose</h4><p>Introduce and grow authentic Philly cheesesteak culture in Saudi Arabia, made the right way.</p></div>
+</div></div><div class="foot" style="color:#8fae93"><span>BLY'S Brand Manual · 2026</span><span>07</span></div></div>
 
-<!-- PHOTOGRAPHY -->
-<section id="photo" class="sec dark">
-  <div class="wrap">
-    <p class="kicker rv">06 · Photography</p>
-    <h2 class="disp h2 rv d1">Dark. Moody. <span class="accent">After sunset.</span></h2>
-    <p class="lead rv d2" style="margin-top:1.4rem">Modern American street-food culture after dark — authentic, hot, urban, appetite-first. Food fills 60–80% of the frame and is always the hero.</p>
-    <div class="photos rv d2" style="margin-top:2.6rem">
-      <div><img src="img/bg1.jpg" alt=""></div><div><img src="img/bg2.jpg" alt=""></div>
-      <div><img src="img/bg3.jpg" alt=""></div><div><img src="img/bg4.jpg" alt=""></div>
-    </div>
-  </div>
-</section>
+<!-- 8 POSITIONING -->
+<div class="page light"><div class="pad center">
+<div class="num">1.4 · Positioning</div>
+<div class="title t-lg" style="max-width:20ch">Saudi Arabia's <span class="accent">cheesesteak specialist.</span></div>
+<div class="desc" style="margin-top:26px">Authentic, bold, confident, urban, modern, welcoming, quality-driven. Never pretentious, never fine-dining, never generic.</div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>08</span></div></div>
 
-<!-- FIT-OUT (transparent products, NO shadow) -->
-<section id="fitout" class="sec green">
-  <div class="wrap">
-    <p class="kicker rv">10 · Furniture &amp; Fit-Out</p>
-    <h2 class="disp h2 rv d1">Every piece, on brand.</h2>
-    <div class="grid g4" style="margin-top:2.8rem">
-      <div class="stagecard rv d1"><img src="img/prod/fit_5.png" alt=""><span class="lab">Bar Stools</span></div>
-      <div class="stagecard rv d2"><img src="img/prod/fit_12.png" alt=""><span class="lab">Dining Chairs</span></div>
-      <div class="stagecard rv d3"><img src="img/prod/fit_8.png" alt=""><span class="lab">Long Table</span></div>
-      <div class="stagecard rv d4"><img src="img/prod/fit_2.png" alt=""><span class="lab">Bar / Counter</span></div>
-      <div class="stagecard rv d1"><img src="img/prod/fit_10.png" alt=""><span class="lab">Small Table</span></div>
-      <div class="stagecard rv d2"><img src="img/prod/fit_7.png" alt=""><span class="lab">Lighting</span></div>
-      <div class="stagecard rv d3"><img src="img/prod/fit_6.png" alt=""><span class="lab">Kitchen Door</span></div>
-      <div class="stagecard rv d4"><img src="img/prod/fit_3.png" alt=""><span class="lab">Cashier</span></div>
-    </div>
-  </div>
-</section>
+<!-- 9 ARCHETYPE -->
+<div class="page light"><div class="pad">
+<div class="num">1.5 · Personality</div><div class="title t-md">The Craftsman &amp; the Urban Explorer.</div>
+<div class="two" style="margin-top:20px"><p>Primary archetype — <b>The Craftsman</b>: obsessed with doing it right, no shortcuts. Secondary — <b>The Urban Explorer</b>: street-smart, modern, always moving.</p>
+<div><div class="srow"><div class="l">We are</div><div class="tags"><span>Authentic</span><span>Bold</span><span>Confident</span><span>Urban</span><span>Quality-driven</span><span>Welcoming</span></div></div>
+<div class="srow" style="margin-top:18px"><div class="l">We are not</div><div class="tags"><span>Pretentious</span><span>Fine dining</span><span>Corporate</span><span>Generic</span></div></div></div></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>09</span></div></div>
 
-<!-- PACKAGING + UNIFORM -->
-<section class="sec dark">
-  <div class="wrap">
-    <p class="kicker rv">12 · Packaging &amp; Uniform</p>
-    <h2 class="disp h2 rv d1">A mobile brand billboard.</h2>
-    <div class="grid g4" style="margin-top:2.8rem">
-      <div class="stagecard rv d1"><img src="img/prod/pack_0.png" alt=""><span class="lab">Packaging</span></div>
-      <div class="stagecard rv d2"><img src="img/prod/pack_1.png" alt=""><span class="lab">Box</span></div>
-      <div class="stagecard rv d3"><img src="img/prod/cloth_0.png" alt=""><span class="lab">Uniform</span></div>
-      <div class="stagecard rv d4"><img src="img/prod/food_0.png" alt=""><span class="lab">Food Hero</span></div>
-    </div>
-  </div>
-</section>
+<!-- 10 PILLARS -->
+<div class="page light"><div class="pad">
+<div class="num">1.6 · Pillars</div><div class="title t-md">Four pillars</div>
+<div class="pcols">
+<div class="pcol"><div class="pn">01</div><h4>Authenticity</h4><p>Real ingredients. Real methods. Real Philly inspiration.</p></div>
+<div class="pcol"><div class="pn">02</div><h4>Quality</h4><p>100% Black Angus, hand-sliced in-house. No shortcuts.</p></div>
+<div class="pcol"><div class="pn">03</div><h4>Urban Culture</h4><p>Riyadh nights, bold environments, street-food energy.</p></div>
+<div class="pcol"><div class="pn">04</div><h4>Community</h4><p>Built for sharing — groups, catering, social dining.</p></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>10</span></div></div>
 
-<!-- PERSONA SPLIT -->
-<section class="sec greengrad">
-  <div class="wrap split">
-    <div class="img rv d1"><img src="img/bg5.jpg" alt=""></div>
-    <div class="rv d2">
-      <p class="kicker">07 · Customer Personas</p>
-      <h2 class="disp" style="font-size:2.8rem">The Urban<br>Food Explorer</h2>
-      <p class="accent" style="letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;margin:1rem 0">Age 18–35 · Primary Audience</p>
-      <p class="lead">Social-media active, follows food trends, drawn to BLY'S urban identity and street-culture atmosphere. Shares the experience.</p>
-    </div>
-  </div>
-</section>
+<!-- 11 DIVIDER 02 -->
+<div class="page charcoal"><div class="full"><img src="img/int.jpg"></div>
+<div class="veil" style="background:linear-gradient(90deg,rgba(0,45,18,.93),rgba(0,45,18,.4))"></div>
+<div class="pad" style="position:relative;justify-content:center"><div class="bignum">02</div><div class="tab"></div><div class="title t-md">Brand Identity</div></div></div>
 
-<!-- LOCATIONS -->
-<section id="locations" class="sec dark">
-  <div class="wrap">
-    <p class="kicker rv">14 · Locations</p>
-    <h2 class="disp h2 rv d1">Six and growing.</h2>
-    <div class="rv d2" style="margin-top:2rem">
-      <div class="rowline"><span class="city">Qurtoba · Riyadh</span><span class="meta">Est. 2022 · Dine-in · Delivery</span></div>
-      <div class="rowline"><span class="city">Alyasmin · Riyadh</span><span class="meta">2024 · Dine-in · Delivery</span></div>
-      <div class="rowline"><span class="city">Hittin · Riyadh</span><span class="meta">2024 · Dine-in · Delivery</span></div>
-      <div class="rowline"><span class="city">Madinat Alumal · Khobar</span><span class="meta">2025 · Dine-in · Delivery</span></div>
-      <div class="rowline"><span class="city">Dammam</span><span class="meta">2025 · Dine-in · Delivery</span></div>
-      <div class="rowline"><span class="city">Olaya Cloud Kitchen · Riyadh</span><span class="meta">2026 · Delivery Only</span></div>
-    </div>
-  </div>
-</section>
+<!-- 12 LOGO -->
+<div class="page light"><div class="pad center" style="align-items:center;text-align:center">
+<div class="num">2.1 · The Logo</div>
+<div class="title t-xl" style="margin:10px 0">BLY<span class="accent">'</span>S</div>
+<div class="desc" style="text-align:center;margin:0 auto">The BLY'S wordmark — bold, condensed, uppercase. Warm white fill, charcoal outline, orange apostrophe. The signature on every branch and pack.</div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>12</span></div></div>
 
-<!-- CLOSING -->
-<section class="closing">
-  <div class="bg"><img src="img/bg6.jpg" alt=""></div>
-  <div class="veil"></div>
-  <div class="wrap inner" style="position:relative;z-index:2">
-    <h2 class="disp" style="font-size:clamp(2.4rem,5.5vw,4.4rem)">Home of the original<br><span class="accent">Philly cheesesteak.</span></h2>
-    <div class="tab"></div>
-    <p class="sub" style="color:var(--gray);letter-spacing:.18em;text-transform:uppercase;font-size:.78rem">blys.com.sa · @blys.sa · Riyadh · Khobar · Dammam</p>
-  </div>
-</section>
+<!-- LOGO VARIATIONS -->
+<div class="page light"><div class="pad">
+<div class="num">2.2 · Logo Variations</div><div class="title t-sm">Primary · Arabic · Icon</div>
+<div class="stages" style="margin-top:28px">
+<div class="stage" style="background:var(--green)"><img src="img/logo.png" style="max-width:78%"><span class="lab">Primary</span></div>
+<div class="stage" style="background:var(--green)"><img src="img/logo_arabic.png" style="max-width:80%"><span class="lab">Arabic Lockup</span></div>
+<div class="stage" style="background:var(--green)"><img src="img/logo_icon.png" style="max-width:55%"><span class="lab">Icon</span></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>13</span></div></div>
 
-<footer>
-  <span>BLY'S Brand Manual · 2026</span>
-  <span>Cheesesteaks · Burgers · Fries</span>
-</footer>
+<!-- CLEAR SPACE -->
+<div class="page light"><div class="pad">
+<div class="num">2.4 · Clear Space &amp; Minimum Size</div><div class="title t-sm">Give the mark room</div>
+<div class="spec">
+<div class="stagebig" style="background:var(--green)"><img src="img/logo.png" style="max-width:60%"></div>
+<div class="rows">
+<div class="srow"><div class="l">Clear space</div><div class="v">Keep clear margin equal to the height of the "B" on all sides. No element enters this zone.</div></div>
+<div class="srow"><div class="l">Minimum size</div><div class="v">Digital: 90px wide minimum. Print: 22mm wide minimum — never smaller.</div></div>
+<div class="srow"><div class="l">Placement</div><div class="v">Always on deep green, charcoal, or a dark photo — never on a busy or light-clashing background.</div></div>
+</div></div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>14</span></div></div>
 
-<script>
-document.body.classList.add('js');
-const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.14});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>80)});
-</script>
-</body>
-</html>
+<!-- 13 LOGO MISUSE -->
+<div class="page light"><div class="pad">
+<div class="num">2.3 · Logo Misuse</div><div class="title t-sm">Protect the mark</div>
+<div class="pcols" style="margin-top:24px">
+<div class="pcol"><div class="pn">✗</div><h4>No Shadows</h4><p>Never add drop-shadows or glows under the logo or any element.</p></div>
+<div class="pcol"><div class="pn">✗</div><h4>No Recolor</h4><p>Only approved brand colors. Never tint outside the palette.</p></div>
+<div class="pcol"><div class="pn">✗</div><h4>No Stretch</h4><p>Never stretch, squeeze, angle, or outline the wordmark.</p></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>13</span></div></div>
+
+<!-- 14 COLOR PALETTE (Hattab-style columns) -->
+<div class="page light"><div class="pad">
+<div class="num">03 · Color System</div><div class="title t-md">2.5 · Color Palette</div>
+<div class="desc" style="margin-top:14px">Deep Green is the dominant environmental color, activated with Orange energy, grounded in Charcoal Black.</div>
+<div class="cols">
+<div class="col" style="background:#002D12;color:#F2EEE8"><div><div class="nm">Deep Green</div><div class="hx">HEX #002D12</div></div></div>
+<div class="col" style="background:#FF9518;color:#0B0B0B"><div><div class="nm">Orange</div><div class="hx">HEX #FF9518</div></div></div>
+<div class="col" style="background:#F2EEE8;color:#0B0B0B;border-color:#ddd"><div><div class="nm">Warm White</div><div class="hx">HEX #F2EEE8</div></div></div>
+<div class="col" style="background:#0B0B0B;color:#F2EEE8"><div><div class="nm">Charcoal</div><div class="hx">HEX #0B0B0B</div></div></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>14</span></div></div>
+
+<!-- 15 RATIO -->
+<div class="page light"><div class="pad">
+<div class="num">03 · Color System</div><div class="title t-md">Usage Ratio</div>
+<div class="desc" style="margin-top:12px">Green is always dominant. Orange is always an accent — never dominant, never a large background.</div>
+<div class="ratio">
+<div style="flex:60;background:#002D12;color:#F2EEE8">60%</div><div style="flex:25;background:#0B0B0B;color:#F2EEE8">25%</div>
+<div style="flex:10;background:#F2EEE8;color:#0B0B0B;border:1px solid #ddd">10%</div><div style="flex:5;background:#FF9518;color:#0B0B0B">5%</div></div>
+<div style="display:flex;gap:40px;margin-top:22px;font-size:13px;color:#5b5950">
+<span><b>60%</b> Deep Green</span><span><b>25%</b> Charcoal</span><span><b>10%</b> Warm White</span><span><b>5%</b> Orange</span></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>15</span></div></div>
+
+<!-- 16 TYPOGRAPHY -->
+<div class="page charcoal"><div class="pad">
+<div class="num">04 · Typography</div>
+<div class="title" style="font-size:96px;line-height:.86;margin-top:6px">HOME OF THE<br>ORIGINAL <span class="accent">PHILLY.</span></div>
+<div style="font-family:var(--body);font-size:24px;font-weight:600;margin:28px 0 8px">Inter — clean, modern, the workhorse for body &amp; UI.</div>
+<div class="desc" style="color:#9aa69c">Anton — display headlines &nbsp;·&nbsp; Inter — body &amp; interface &nbsp;·&nbsp; Cairo — Arabic &nbsp; <span style="font-family:var(--ar)">بيليز · الأصلي · طازج من يومه</span></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>16</span></div></div>
+
+<!-- TYPE HIERARCHY -->
+<div class="page light"><div class="pad">
+<div class="num">04 · Typography</div><div class="title t-sm">Hierarchy</div>
+<div style="margin-top:18px">
+<div class="rowline"><span style="font-family:var(--display);font-size:40px;text-transform:uppercase">H1 · Home of the Original</span><span class="meta">Anton · 48–120pt · Headlines</span></div>
+<div class="rowline"><span style="font-family:var(--display);font-size:30px;text-transform:uppercase">H2 · Real Beef. Real Cheese.</span><span class="meta">Anton · 32–48pt · Sub-heads</span></div>
+<div class="rowline"><span style="font-family:var(--body);font-weight:600;font-size:22px">H3 · Built for Saudi Arabia.</span><span class="meta">Inter SemiBold · 20–32pt</span></div>
+<div class="rowline"><span style="font-family:var(--body);font-size:15px;color:#5b5950">Body · Every cheesesteak starts with quality ingredients.</span><span class="meta">Inter Regular · 10–14pt</span></div>
+<div class="rowline"><span style="font-family:var(--ar);font-weight:700;font-size:24px">عربي · بيليز الأصلي</span><span class="meta">Cairo Bold · Arabic</span></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>18</span></div></div>
+
+<!-- 17 PHOTOGRAPHY -->
+<div class="page charcoal"><div class="pad">
+<div class="num">06 · Photography</div><div class="title t-md">Dark. Moody. <span class="accent">After sunset.</span></div>
+<div class="desc" style="color:#9aa69c;margin-top:12px">Modern American street-food culture after dark. Food fills 60–80% of the frame and is always the hero. Warm practical light, high contrast, no flat studio look.</div>
+<div class="photos"><div><img src="img/bg1.jpg"></div><div><img src="img/foodp0.jpg"></div><div><img src="img/bg3.jpg"></div><div><img src="img/foodp1.jpg"></div></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>17</span></div></div>
+
+<!-- 18 DIVIDER 03 personas -->
+<div class="page charcoal"><div class="full"><img src="img/bg5.jpg"></div>
+<div class="veil" style="background:linear-gradient(90deg,rgba(0,45,18,.92),rgba(0,45,18,.4))"></div>
+<div class="pad" style="position:relative;justify-content:center"><div class="bignum">07</div><div class="tab"></div><div class="title t-md">Customer Personas</div></div></div>
+
+<!-- 19 PERSONAS -->
+<div class="page light"><div class="pad">
+<div class="num">07 · Personas</div><div class="title t-sm">Who we serve</div>
+<div class="pcols" style="margin-top:22px">
+<div class="pcol"><div class="pn">01</div><h4>The Purist</h4><p>22–45 · Values authenticity &amp; quality. Wants the closest thing to a real Philly cheesesteak.</p></div>
+<div class="pcol"><div class="pn">02</div><h4>Urban Explorer</h4><p>18–35 · Social, trend-driven, drawn to BLY'S urban identity. Shares the experience.</p></div>
+<div class="pcol"><div class="pn">03</div><h4>Late-Night Craver</h4><p>18–40 · Bold flavor after dark. Riyadh nights, delivery, drive-thru energy.</p></div>
+</div>
+<div class="pcols" style="margin-top:18px;flex:0">
+<div class="pcol" style="flex:1"><div class="pn">04</div><h4>Quality Professional</h4><p>25–45 · Premium expectation, consistent experience, trusted brand.</p></div>
+<div class="pcol" style="flex:1"><div class="pn">05</div><h4>The Sharing Group</h4><p>Friends &amp; family — built for sharing, catering, and social dining.</p></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>19</span></div></div>
+
+<!-- 20 DIVIDER 04 environment -->
+<div class="page charcoal"><div class="full"><img src="img/ext.jpg"></div>
+<div class="veil" style="background:linear-gradient(90deg,rgba(0,45,18,.9),rgba(0,45,18,.35))"></div>
+<div class="pad" style="position:relative;justify-content:center"><div class="bignum">08</div><div class="tab"></div><div class="title t-md">Brand Environment</div></div></div>
+
+<!-- 21 EXTERIOR -->
+<div class="page charcoal"><div class="full"><img src="img/ext.jpg"></div>
+<div class="veil" style="background:linear-gradient(0deg,rgba(11,11,11,.85),rgba(11,11,11,.1) 55%)"></div>
+<div class="pad" style="position:relative;justify-content:flex-end">
+<div class="num">08.1 · Exterior</div><div class="title t-md">An urban night destination.</div>
+<div class="desc" style="color:#cfd8cf;margin-top:10px">Deep green facade, bold warm-white BLY'S signage, warm practical lighting, glass frontage. The brand commands the street.</div>
+</div></div>
+
+<!-- 22 INTERIOR -->
+<div class="page charcoal"><div class="full"><img src="img/int.jpg"></div>
+<div class="veil" style="background:linear-gradient(0deg,rgba(11,11,11,.85),rgba(11,11,11,.1) 55%)"></div>
+<div class="pad" style="position:relative;justify-content:flex-end">
+<div class="num">08.2 · Interior</div><div class="title t-md">Bold, gritty, welcoming.</div>
+<div class="desc" style="color:#cfd8cf;margin-top:10px">Dark green walls, street-culture wall typography, orange furniture accents, open-kitchen energy, warm directional lighting.</div>
+</div></div>
+
+<!-- 23 DIVIDER 05 fit-out -->
+<div class="page greengrad"><div class="pad" style="justify-content:center"><div class="bignum">09</div><div class="tab"></div><div class="title t-md">Furniture &amp; Fit-Out</div>
+<div class="desc" style="color:#cfd8cf;margin-top:8px">Every piece in the BLY'S green-and-orange system. Consistent, durable, on-brand.</div></div>
+<div class="foot" style="color:#8fae93"><span>BLY'S Brand Manual · 2026</span><span>23</span></div></div>
+
+<!-- 24 FIT-OUT GRID A -->
+<div class="page light"><div class="pad">
+<div class="num">09 · Fit-Out</div><div class="title t-sm">Seating &amp; tables</div>
+<div class="stages">
+<div class="stage tall"><img src="img/prod/fit_5.png"><span class="lab">Bar Stools</span></div>
+<div class="stage tall"><img src="img/prod/fit_12.png"><span class="lab">Dining Chairs</span></div>
+<div class="stage tall"><img src="img/prod/fit_8.png"><span class="lab">Long Table</span></div>
+<div class="stage tall"><img src="img/prod/fit_10.png"><span class="lab">Small Table</span></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>24</span></div></div>
+
+<!-- 25 FIT-OUT GRID B -->
+<div class="page light"><div class="pad">
+<div class="num">09 · Fit-Out</div><div class="title t-sm">Bar, kitchen &amp; lighting</div>
+<div class="stages">
+<div class="stage tall"><img src="img/prod/fit_2.png"><span class="lab">Bar / Counter</span></div>
+<div class="stage tall"><img src="img/prod/fit_3.png"><span class="lab">Cashier</span></div>
+<div class="stage tall"><img src="img/prod/fit_6.png"><span class="lab">Kitchen Door</span></div>
+<div class="stage tall"><img src="img/prod/fit_7.png"><span class="lab">Lighting</span></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>25</span></div></div>
+
+<!-- 26 PACKAGING -->
+<div class="page light"><div class="pad">
+<div class="num">10.1 · Packaging</div><div class="title t-sm">A mobile brand billboard</div>
+<div class="spec">
+<div class="stagebig"><img src="img/prod/pack_0.png"></div>
+<div class="rows">
+<div class="srow"><div class="l">System</div><div class="v">Deep green with warm-white wordmark, orange accents.</div></div>
+<div class="srow"><div class="l">Built for</div><div class="v">Street eating, dine-in, and delivery.</div></div>
+<div class="srow"><div class="l">Rule</div><div class="v">Recognizable from across the room — bold, simple, consistent.</div></div>
+</div></div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>26</span></div></div>
+
+<!-- PACKAGING ITEMS -->
+<div class="page light"><div class="pad">
+<div class="num">10.1 · Packaging System</div><div class="title t-sm">The pack range</div>
+<div class="stages" style="margin-top:24px">
+<div class="stage"><img src="img/prod/pack_0.png"><span class="lab">Cheesesteak Wrap</span></div>
+<div class="stage"><img src="img/prod/pack_1.png"><span class="lab">Box</span></div>
+<div class="stage"><img src="img/prod/pack_2.png"><span class="lab">Bag</span></div>
+<div class="stage"><img src="img/prod/food_0.png"><span class="lab">Food Hero</span></div>
+</div>
+<div style="display:flex;gap:40px;margin-top:18px;font-size:13px;color:#5b5950">
+<span><b>Color</b> Deep green + warm-white wordmark</span><span><b>Accent</b> Orange, ≤5%</span><span><b>Finish</b> Matte, food-grade</span></div>
+</div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>27</span></div></div>
+
+<!-- 27 UNIFORM -->
+<div class="page light"><div class="pad">
+<div class="num">10.2 · Uniform</div><div class="title t-sm">The team is the brand</div>
+<div class="spec">
+<div class="stagebig"><img src="img/prod/cloth_0.png"></div>
+<div class="rows">
+<div class="srow"><div class="l">Palette</div><div class="v">Charcoal black or deep green only — no non-brand colors.</div></div>
+<div class="srow"><div class="l">Kit</div><div class="v">Shirt · trousers · apron · shoes — front-of-house &amp; kitchen.</div></div>
+<div class="srow"><div class="l">Look</div><div class="v">Clean, consistent, urban — as sharp as the brand.</div></div>
+</div></div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>27</span></div></div>
+
+<!-- 28 VOICE -->
+<div class="page greengrad"><div class="pad">
+<div class="num">05 · Brand Voice</div><div class="title t-md">Bold but never arrogant.</div>
+<div class="tags" style="margin-top:18px"><span>Home of the Original Philly Cheesesteak</span><span>Made Fresh Daily</span><span>Real Beef. Real Cheese.</span><span>Riyadh Nights</span><span>Street Culture Riyadh</span></div>
+<div class="do2"><div class="box yes"><h5>Sounds like</h5><ul><li>Real beef. Real cheese. Real flavor.</li><li>Loaded with flavor. Built different.</li><li>Made fresh daily.</li></ul></div>
+<div class="box no"><h5>Doesn't sound like</h5><ul><li>We think you may enjoy our product.</li><li>The world's most revolutionary sandwich.</li><li>Download our app today.</li></ul></div></div>
+</div><div class="foot" style="color:#8fae93"><span>BLY'S Brand Manual · 2026</span><span>28</span></div></div>
+
+<!-- BRAND DO / DON'T -->
+<div class="page light"><div class="pad">
+<div class="num">11 · Do's &amp; Don'ts</div><div class="title t-sm">Keep it BLY'S</div>
+<div class="do2" style="margin-top:24px">
+<div class="box yes"><h5>Always</h5><ul><li>Green dominant, orange as accent only (≤5%)</li><li>Anton headlines, Inter body, Cairo Arabic</li><li>Dark cinematic food photography, hero-first</li><li>Warm white — never pure white</li></ul></div>
+<div class="box no"><h5>Never</h5><ul><li>Shadows or glows under elements</li><li>Orange as a large background</li><li>Stretch, recolor, or angle the logo</li><li>Bright studio / fine-dining look</li></ul></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>30</span></div></div>
+
+<!-- 29 LOCATIONS -->
+<div class="page light"><div class="pad">
+<div class="num">10.4 · Locations</div><div class="title t-sm">Six and growing</div>
+<div style="margin-top:18px">
+<div class="rowline"><span class="city">Qurtoba · Riyadh</span><span class="meta">Est. 2022 · Dine-in · Delivery</span></div>
+<div class="rowline"><span class="city">Alyasmin · Riyadh</span><span class="meta">2024 · Dine-in · Delivery</span></div>
+<div class="rowline"><span class="city">Hittin · Riyadh</span><span class="meta">2024 · Dine-in · Delivery</span></div>
+<div class="rowline"><span class="city">Madinat Alumal · Khobar</span><span class="meta">2025 · Dine-in · Delivery</span></div>
+<div class="rowline"><span class="city">Dammam</span><span class="meta">2025 · Dine-in · Delivery</span></div>
+<div class="rowline"><span class="city">Olaya Cloud Kitchen · Riyadh</span><span class="meta">2026 · Delivery Only</span></div>
+</div></div><div class="foot"><span>BLY'S Brand Manual · 2026</span><span>29</span></div></div>
+
+<!-- 30 CLOSING -->
+<div class="page charcoal"><div class="full"><img src="img/bg6.jpg"></div>
+<div class="veil" style="background:linear-gradient(90deg,rgba(0,45,18,.93),rgba(0,45,18,.5))"></div>
+<div class="pad" style="position:relative;justify-content:center">
+<div class="title t-lg">Home of the original<br><span class="accent">Philly cheesesteak.</span></div>
+<div class="tab"></div>
+<div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#cfd8cf">blys.com.sa · @blys.sa · Riyadh · Khobar · Dammam</div>
+</div></div>
+
+</body></html>
