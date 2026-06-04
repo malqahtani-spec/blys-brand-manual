@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLY'S — Brand Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#002D12; --green2:#01481F; --green3:#063b1c; --orange:#FF9518;
+  --white:#F2EEE8; --black:#0B0B0B; --gray:#8A8A8A;
+  --display:'Anton',sans-serif; --body:'Inter',sans-serif; --ar:'Cairo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.5}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 6vw}
+section{position:relative}
+.disp{font-family:var(--display);text-transform:uppercase;font-weight:400;line-height:.9;letter-spacing:.005em}
+.accent{color:var(--orange)}
+.kicker{font-weight:700;letter-spacing:.34em;text-transform:uppercase;font-size:.66rem;color:var(--orange);margin-bottom:1.2rem}
+.tab{width:60px;height:6px;background:var(--orange);margin:1.2rem 0}
+.lead{font-size:1.15rem;color:var(--gray);max-width:620px;line-height:1.65}
+.grain::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:9;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 6vw;background:linear-gradient(180deg,rgba(11,11,11,.85),transparent);backdrop-filter:blur(6px);transition:.4s}
+nav.solid{background:var(--green);box-shadow:0 1px 0 rgba(242,238,232,.08)}
+nav .brand{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em}
+nav .links{display:flex;gap:1.6rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+nav .links a{color:var(--white);text-decoration:none;opacity:.7;transition:.25s}
+nav .links a:hover{opacity:1;color:var(--orange)}
+@media(max-width:820px){nav .links{display:none}}
+/* hero */
+.hero{height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,45,18,.94) 0%,rgba(0,45,18,.6) 45%,rgba(11,11,11,.35) 100%)}
+.hero .inner{position:relative;z-index:2}
+.hero h1{font-family:var(--display);font-size:clamp(5rem,17vw,15rem);line-height:.78;text-transform:uppercase}
+.hero .sub{margin-top:1.8rem;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gray)}
+.scrollcue{position:absolute;bottom:2.2rem;left:6vw;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gray);z-index:3;animation:bob 2s infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+/* generic section */
+.sec{padding:9rem 0}
+.sec.green{background:var(--green)}
+.sec.greengrad{background:linear-gradient(160deg,var(--green2),var(--green) 55%,#001d0c)}
+.sec.dark{background:var(--black)}
+.h2{font-size:clamp(2.4rem,5vw,4rem);max-width:14ch}
+/* reveal — visible by default; only hidden once JS confirms it can reveal them (capture/print safe) */
+.rv{transition:.9s cubic-bezier(.2,.7,.2,1)}
+body.js .rv{opacity:0;transform:translateY(34px)}
+body.js .rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+@media print{ body.js .rv{opacity:1!important;transform:none!important} section{break-inside:avoid} }
+/* grids */
+.grid{display:grid;gap:1.6rem}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--green2);border-radius:14px;padding:2rem;border:1px solid rgba(242,238,232,.07)}
+.card .n{font-family:var(--display);font-size:2rem;color:var(--orange)}
+.card h4{font-family:var(--display);text-transform:uppercase;font-size:1.25rem;margin:.5rem 0 .7rem;font-weight:400}
+.card p{color:var(--gray);font-size:.95rem}
+/* color */
+.sw{height:200px;border-radius:12px;display:flex;align-items:flex-end;padding:1.1rem;border:1px solid rgba(242,238,232,.12)}
+.sw .nm{font-family:var(--display);text-transform:uppercase;font-size:1.05rem}
+.sw .hx{font-size:.72rem;letter-spacing:.1em;opacity:.85}
+.ratio{display:flex;height:130px;border-radius:12px;overflow:hidden;margin-top:1.4rem}
+.ratio div{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.9rem}
+/* type */
+.typebig{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.6rem,7vw,6rem);line-height:.88}
+/* product stage (transparent, NO shadow) */
+.stagecard{background:radial-gradient(circle at 50% 40%,#0c6536 0%,var(--green2) 48%,#001a0a 100%);
+  border-radius:16px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:12%;overflow:hidden;position:relative}
+.stagecard img{max-width:100%;max-height:100%;object-fit:contain}
+.stagecard .lab{position:absolute;left:1.1rem;bottom:1rem;font-family:var(--display);text-transform:uppercase;font-size:1rem;letter-spacing:.02em}
+/* photo gallery */
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.photos div{aspect-ratio:3/4;border-radius:12px;overflow:hidden}
+.photos img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.photos div:hover img{transform:scale(1.08)}
+@media(max-width:820px){.photos{grid-template-columns:repeat(2,1fr)}}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.split .img{aspect-ratio:4/5;border-radius:14px;overflow:hidden}
+.split .img img{width:100%;height:100%;object-fit:cover}
+/* list rows */
+.rowline{display:flex;justify-content:space-between;padding:1.1rem 0;border-bottom:1px solid rgba(242,238,232,.1)}
+.rowline .city{font-family:var(--display);text-transform:uppercase;font-size:1.3rem}
+.rowline .meta{color:var(--gray);font-size:.85rem;text-align:right}
+/* closing */
+.closing{height:92vh;min-height:560px;display:flex;align-items:center;overflow:hidden}
+.closing .bg{position:absolute;inset:0}
+.closing .bg img{width:100%;height:100%;object-fit:cover}
+.closing .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,45,18,.93),rgba(0,45,18,.55))}
+footer{background:var(--black);padding:2.4rem 6vw;display:flex;justify-content:space-between;color:var(--gray);font-size:.75rem;letter-spacing:.1em}
+.taglist{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.taglist span{border:1px solid rgba(242,238,232,.2);border-radius:30px;padding:.4rem 1rem;font-size:.78rem;font-weight:600}
+.do2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem}
+@media(max-width:820px){.do2{grid-template-columns:1fr}}
+.do2 .box{border-radius:14px;padding:1.8rem}
+.do2 .yes{background:var(--green2)} .do2 .no{background:#3a1212}
+.do2 h5{font-family:var(--display);text-transform:uppercase;font-size:1.1rem;margin-bottom:1rem}
+.do2 li{list-style:none;color:var(--gray);padding:.32rem 0;font-size:.92rem}
+.do2 .yes li::before{content:"→ ";color:var(--orange)} .do2 .no li::before{content:"✗ ";color:#e06a5a}
+</style>
+</head>
+<body class="grain">
+
+<nav id="nav">
+  <div class="brand">BLY<span class="accent">'</span>S</div>
+  <div class="links">
+    <a href="#story">Story</a><a href="#identity">Identity</a><a href="#color">Color</a>
+    <a href="#type">Type</a><a href="#photo">Photography</a><a href="#fitout">Fit-Out</a><a href="#locations">Locations</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg"><img src="img/bg0.jpg" alt=""></div>
+  <div class="veil"></div>
+  <div class="wrap inner">
+    <p class="kicker">Brand Guidelines &amp; Identity Manual · 2026</p>
+    <h1>BLY<span class="accent">'</span>S</h1>
+    <div class="tab"></div>
+    <p class="sub">Cheesesteaks · Burgers · Fries &nbsp;|&nbsp; Riyadh &amp; Khobar · Est. 2021</p>
+  </div>
+  <div class="scrollcue">Scroll ↓</div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="sec greengrad">
+  <div class="wrap">
+    <p class="kicker rv">01 · Brand Story</p>
+    <h2 class="disp h2 rv d1">Authentic Philly street food, <span class="accent">built for Saudi Arabia.</span></h2>
+    <p class="lead rv d2" style="margin-top:2rem">Before BLY'S was a restaurant, it was a sandwich shared among family and friends. The founder spent years perfecting an authentic Philly cheesesteak at home. In 2021 the vision was born — no shortcuts, no compromises, Black Angus beef in every sandwich.</p>
+    <div class="grid g3" style="margin-top:3.5rem">
+      <div class="card rv d1"><div class="n">2021</div><h4>The Vision</h4><p>Built around authenticity — done the right way, the Philly way.</p></div>
+      <div class="card rv d2"><div class="n">2022</div><h4>First Branch</h4><p>Qurtoba, Riyadh. Demand confirmed the obsession.</p></div>
+      <div class="card rv d3"><div class="n">2026</div><h4>Six &amp; Beyond</h4><p>Riyadh · Khobar · Dammam · Cloud Kitchen · Formula E.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTITY / PILLARS -->
+<section id="identity" class="sec dark">
+  <div class="wrap">
+    <p class="kicker rv">02 · Brand Identity</p>
+    <h2 class="disp h2 rv d1">The Four Pillars</h2>
+    <div class="grid g4" style="margin-top:3rem">
+      <div class="card rv d1"><div class="n">01</div><h4>Authenticity</h4><p>Real ingredients. Real methods. Real Philly inspiration.</p></div>
+      <div class="card rv d2"><div class="n">02</div><h4>Quality</h4><p>100% Black Angus, hand-sliced in-house. No shortcuts.</p></div>
+      <div class="card rv d3"><div class="n">03</div><h4>Urban Culture</h4><p>Riyadh nights, bold environments, street-food energy.</p></div>
+      <div class="card rv d4"><div class="n">04</div><h4>Community</h4><p>Built for sharing — groups, catering, social dining.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOR -->
+<section id="color" class="sec green">
+  <div class="wrap">
+    <p class="kicker rv">03 · Color System</p>
+    <h2 class="disp h2 rv d1">The Palette</h2>
+    <div class="grid g4 rv d2" style="margin-top:2.6rem">
+      <div class="sw" style="background:#002D12"><div><div class="nm">Deep Green</div><div class="hx">#002D12</div></div></div>
+      <div class="sw" style="background:#FF9518"><div style="color:#0B0B0B"><div class="nm">Orange</div><div class="hx">#FF9518</div></div></div>
+      <div class="sw" style="background:#F2EEE8"><div style="color:#0B0B0B"><div class="nm">Warm White</div><div class="hx">#F2EEE8</div></div></div>
+      <div class="sw" style="background:#0B0B0B"><div><div class="nm">Charcoal</div><div class="hx">#0B0B0B</div></div></div>
+    </div>
+    <h3 class="disp rv d2" style="font-size:1.5rem;margin-top:3.5rem">Usage Ratio — Green dominant, Orange accent only</h3>
+    <div class="ratio rv d3">
+      <div style="flex:60;background:#002D12;border:1px solid rgba(242,238,232,.15)">60%</div>
+      <div style="flex:25;background:#0B0B0B">25%</div>
+      <div style="flex:10;background:#F2EEE8;color:#0B0B0B">10%</div>
+      <div style="flex:5;background:#FF9518;color:#0B0B0B">5%</div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="type" class="sec dark">
+  <div class="wrap">
+    <p class="kicker rv">04 · Typography</p>
+    <div class="typebig rv d1">HOME OF THE<br>ORIGINAL <span class="accent">PHILLY.</span></div>
+    <p class="rv d2" style="font-size:1.5rem;font-weight:600;margin:1.8rem 0 .4rem">Inter — clean, modern, the workhorse for body &amp; UI.</p>
+    <p class="lead rv d3">Anton for display headlines. Inter for body and interface. Cairo for Arabic — <span style="font-family:var(--ar)">بيليز · الأصلي · طازج من يومه</span>.</p>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="sec greengrad">
+  <div class="wrap">
+    <p class="kicker rv">05 · Brand Voice</p>
+    <h2 class="disp h2 rv d1">Bold but never arrogant.</h2>
+    <div class="taglist rv d2">
+      <span>Home of the Original Philly Cheesesteak</span><span>Made Fresh Daily</span><span>Real Beef. Real Cheese.</span><span>Riyadh Nights</span><span>Street Culture Riyadh</span>
+    </div>
+    <div class="do2">
+      <div class="box yes rv d2"><h5>Sounds like</h5><ul><li>Real beef. Real cheese. Real flavor.</li><li>Loaded with flavor. Built different.</li><li>Made fresh daily.</li></ul></div>
+      <div class="box no rv d3"><h5>Doesn't sound like</h5><ul><li>We think you may enjoy our product.</li><li>The world's most revolutionary sandwich.</li><li>Download our app today.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY -->
+<section id="photo" class="sec dark">
+  <div class="wrap">
+    <p class="kicker rv">06 · Photography</p>
+    <h2 class="disp h2 rv d1">Dark. Moody. <span class="accent">After sunset.</span></h2>
+    <p class="lead rv d2" style="margin-top:1.4rem">Modern American street-food culture after dark — authentic, hot, urban, appetite-first. Food fills 60–80% of the frame and is always the hero.</p>
+    <div class="photos rv d2" style="margin-top:2.6rem">
+      <div><img src="img/bg1.jpg" alt=""></div><div><img src="img/bg2.jpg" alt=""></div>
+      <div><img src="img/bg3.jpg" alt=""></div><div><img src="img/bg4.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT-OUT (transparent products, NO shadow) -->
+<section id="fitout" class="sec green">
+  <div class="wrap">
+    <p class="kicker rv">10 · Furniture &amp; Fit-Out</p>
+    <h2 class="disp h2 rv d1">Every piece, on brand.</h2>
+    <div class="grid g4" style="margin-top:2.8rem">
+      <div class="stagecard rv d1"><img src="img/prod/fit_5.png" alt=""><span class="lab">Bar Stools</span></div>
+      <div class="stagecard rv d2"><img src="img/prod/fit_12.png" alt=""><span class="lab">Dining Chairs</span></div>
+      <div class="stagecard rv d3"><img src="img/prod/fit_8.png" alt=""><span class="lab">Long Table</span></div>
+      <div class="stagecard rv d4"><img src="img/prod/fit_2.png" alt=""><span class="lab">Bar / Counter</span></div>
+      <div class="stagecard rv d1"><img src="img/prod/fit_10.png" alt=""><span class="lab">Small Table</span></div>
+      <div class="stagecard rv d2"><img src="img/prod/fit_7.png" alt=""><span class="lab">Lighting</span></div>
+      <div class="stagecard rv d3"><img src="img/prod/fit_6.png" alt=""><span class="lab">Kitchen Door</span></div>
+      <div class="stagecard rv d4"><img src="img/prod/fit_3.png" alt=""><span class="lab">Cashier</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGING + UNIFORM -->
+<section class="sec dark">
+  <div class="wrap">
+    <p class="kicker rv">12 · Packaging &amp; Uniform</p>
+    <h2 class="disp h2 rv d1">A mobile brand billboard.</h2>
+    <div class="grid g4" style="margin-top:2.8rem">
+      <div class="stagecard rv d1"><img src="img/prod/pack_0.png" alt=""><span class="lab">Packaging</span></div>
+      <div class="stagecard rv d2"><img src="img/prod/pack_1.png" alt=""><span class="lab">Box</span></div>
+      <div class="stagecard rv d3"><img src="img/prod/cloth_0.png" alt=""><span class="lab">Uniform</span></div>
+      <div class="stagecard rv d4"><img src="img/prod/food_0.png" alt=""><span class="lab">Food Hero</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA SPLIT -->
+<section class="sec greengrad">
+  <div class="wrap split">
+    <div class="img rv d1"><img src="img/bg5.jpg" alt=""></div>
+    <div class="rv d2">
+      <p class="kicker">07 · Customer Personas</p>
+      <h2 class="disp" style="font-size:2.8rem">The Urban<br>Food Explorer</h2>
+      <p class="accent" style="letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;margin:1rem 0">Age 18–35 · Primary Audience</p>
+      <p class="lead">Social-media active, follows food trends, drawn to BLY'S urban identity and street-culture atmosphere. Shares the experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations" class="sec dark">
+  <div class="wrap">
+    <p class="kicker rv">14 · Locations</p>
+    <h2 class="disp h2 rv d1">Six and growing.</h2>
+    <div class="rv d2" style="margin-top:2rem">
+      <div class="rowline"><span class="city">Qurtoba · Riyadh</span><span class="meta">Est. 2022 · Dine-in · Delivery</span></div>
+      <div class="rowline"><span class="city">Alyasmin · Riyadh</span><span class="meta">2024 · Dine-in · Delivery</span></div>
+      <div class="rowline"><span class="city">Hittin · Riyadh</span><span class="meta">2024 · Dine-in · Delivery</span></div>
+      <div class="rowline"><span class="city">Madinat Alumal · Khobar</span><span class="meta">2025 · Dine-in · Delivery</span></div>
+      <div class="rowline"><span class="city">Dammam</span><span class="meta">2025 · Dine-in · Delivery</span></div>
+      <div class="rowline"><span class="city">Olaya Cloud Kitchen · Riyadh</span><span class="meta">2026 · Delivery Only</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="bg"><img src="img/bg6.jpg" alt=""></div>
+  <div class="veil"></div>
+  <div class="wrap inner" style="position:relative;z-index:2">
+    <h2 class="disp" style="font-size:clamp(2.4rem,5.5vw,4.4rem)">Home of the original<br><span class="accent">Philly cheesesteak.</span></h2>
+    <div class="tab"></div>
+    <p class="sub" style="color:var(--gray);letter-spacing:.18em;text-transform:uppercase;font-size:.78rem">blys.com.sa · @blys.sa · Riyadh · Khobar · Dammam</p>
+  </div>
+</section>
+
+<footer>
+  <span>BLY'S Brand Manual · 2026</span>
+  <span>Cheesesteaks · Burgers · Fries</span>
+</footer>
+
+<script>
+document.body.classList.add('js');
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>80)});
+</script>
+</body>
+</html>
