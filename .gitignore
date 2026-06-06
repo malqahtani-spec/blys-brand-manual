@@ -1,2 +1,5 @@
 .omc/
 *.DS_Store
+*.pptx
+*.pdf
+!BLYS_Brand_Manual.pdf
