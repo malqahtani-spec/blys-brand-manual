@@ -109,6 +109,14 @@ footer{background:var(--black);padding:2.4rem 6vw;display:flex;justify-content:s
 .do2 h5{font-family:var(--display);text-transform:uppercase;font-size:1.1rem;margin-bottom:1rem}
 .do2 li{list-style:none;color:var(--gray);padding:.32rem 0;font-size:.92rem}
 .do2 .yes li::before{content:"→ ";color:var(--orange)} .do2 .no li::before{content:"✗ ";color:#e06a5a}
+/* sound & music */
+.daypart{position:relative}
+.daypart .db{font-family:var(--display);font-size:2.6rem;color:var(--orange);line-height:1}
+.daypart .unit{font-size:.85rem;color:var(--gray);margin-left:.3rem;letter-spacing:.06em}
+.daypart .when{font-family:var(--display);text-transform:uppercase;font-size:1.15rem;margin:.55rem 0 .15rem;font-weight:400}
+.daypart .mood{color:var(--gray);font-size:.88rem}
+.meter{height:9px;background:rgba(242,238,232,.12);border-radius:30px;overflow:hidden;margin-top:1.3rem}
+.meter span{display:block;height:100%;background:var(--orange);border-radius:30px}
 </style>
 </head>
 <body class="grain">
@@ -117,7 +125,7 @@ footer{background:var(--black);padding:2.4rem 6vw;display:flex;justify-content:s
   <div class="brand">BLY<span class="accent">'</span>S</div>
   <div class="links">
     <a href="#story">Story</a><a href="#identity">Identity</a><a href="#color">Color</a>
-    <a href="#type">Type</a><a href="#photo">Photography</a><a href="#fitout">Fit-Out</a><a href="#locations">Locations</a>
+    <a href="#type">Type</a><a href="#photo">Photography</a><a href="#sound">Sound</a><a href="#fitout">Fit-Out</a><a href="#locations">Locations</a>
   </div>
 </nav>
 
@@ -217,6 +225,49 @@ footer{background:var(--black);padding:2.4rem 6vw;display:flex;justify-content:s
     <div class="photos rv d2" style="margin-top:2.6rem">
       <div><img src="img/bg1.jpg" alt=""></div><div><img src="img/bg2.jpg" alt=""></div>
       <div><img src="img/bg3.jpg" alt=""></div><div><img src="img/bg4.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOUND & MUSIC -->
+<section id="sound" class="sec greengrad">
+  <div class="wrap">
+    <p class="kicker rv">08 · Sound &amp; Music</p>
+    <h2 class="disp h2 rv d1">Set the volume to the <span class="accent">street.</span></h2>
+    <p class="lead rv d2" style="margin-top:1.4rem">Music is part of the BLY'S identity — urban hip-hop, R&amp;B and street beats that echo Riyadh nights. The level rises with the day, but never overpowers conversation or the kitchen. <span style="font-family:var(--ar)">إيقاع المدينة، بصوت مضبوط</span>.</p>
+
+    <div class="grid g3" style="margin-top:3rem">
+      <div class="card daypart rv d1">
+        <div><span class="db">55–60</span><span class="unit">dB</span></div>
+        <h4 class="when">Opening · Daytime</h4>
+        <p class="mood">Low-key urban. Relaxed beats that warm the room without filling it.</p>
+        <div class="meter"><span style="width:45%"></span></div>
+      </div>
+      <div class="card daypart rv d2">
+        <div><span class="db">60–65</span><span class="unit">dB</span></div>
+        <h4 class="when">Lunch · Afternoon</h4>
+        <p class="mood">Steady hip-hop &amp; R&amp;B groove. Energy you feel, talk you can still hear.</p>
+        <div class="meter"><span style="width:66%"></span></div>
+      </div>
+      <div class="card daypart rv d3">
+        <div><span class="db">65–70</span><span class="unit">dB</span></div>
+        <h4 class="when">Evening · Riyadh Nights</h4>
+        <p class="mood">Peak street-culture energy. Loud enough to move, never to shout over.</p>
+        <div class="meter"><span style="width:88%"></span></div>
+      </div>
+    </div>
+
+    <div class="do2">
+      <div class="box yes rv d2"><h5>Sounds right</h5><ul>
+        <li>Curated hip-hop, R&amp;B and urban beats — on-brand street culture.</li>
+        <li>Playlists refreshed monthly and kept consistent across branches.</li>
+        <li>Guests can talk without raising their voice.</li>
+      </ul></div>
+      <div class="box no rv d3"><h5>Turn it off</h5><ul>
+        <li>Music fully off during prayer times (<span style="font-family:var(--ar)">أوقات الصلاة</span>).</li>
+        <li>Music off at closing while the last guests finish up.</li>
+        <li>No explicit lyrics, off-brand genres, or radio ads.</li>
+      </ul></div>
     </div>
   </div>
 </section>
