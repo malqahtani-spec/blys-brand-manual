@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLY'S — Brand One-Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#002D12; --green2:#01481F; --green3:#063b1c; --orange:#FF9518;
+  --white:#F2EEE8; --black:#0B0B0B; --gray:#8A8A8A;
+  --display:'Anton',sans-serif; --body:'Inter',sans-serif; --ar:'Cairo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:var(--body);background:#070707;color:var(--white);line-height:1.45;
+  display:flex;justify-content:center;padding:24px;min-height:100vh}
+img{display:block;max-width:100%}
+.disp{font-family:var(--display);text-transform:uppercase;font-weight:400;line-height:.9;letter-spacing:.005em}
+.accent{color:var(--orange)}
+
+/* the sheet — single A4 page */
+.sheet{
+  width:210mm;max-width:100%;aspect-ratio:210/297;background:var(--green);
+  border-radius:14px;overflow:hidden;position:relative;
+  display:grid;grid-template-rows:auto 1fr auto;
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
+  background:linear-gradient(160deg,var(--green2),var(--green) 50%,#001d0c);
+}
+.sheet::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;z-index:5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* header */
+.head{padding:7% 7% 0;position:relative;z-index:2}
+.kicker{font-weight:700;letter-spacing:.32em;text-transform:uppercase;font-size:.6rem;color:var(--orange)}
+.head h1{font-family:var(--display);font-size:clamp(3rem,11vw,6.5rem);line-height:.8;text-transform:uppercase;margin-top:.5rem}
+.head .sub{margin-top:.7rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray)}
+.tab{width:48px;height:5px;background:var(--orange);margin:.9rem 0}
+
+/* body grid */
+.grid{padding:4% 7%;position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:5% 7%;align-content:start}
+.block .lab{font-family:var(--display);text-transform:uppercase;font-size:.95rem;color:var(--orange);letter-spacing:.02em;margin-bottom:.55rem}
+.block p{font-size:.74rem;color:var(--white);opacity:.92}
+.block p.muted{color:var(--gray);opacity:1}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem .9rem;margin-top:.2rem}
+.pillars div{font-size:.72rem}
+.pillars b{display:block;font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:.82rem;letter-spacing:.01em}
+.pillars span{color:var(--gray);font-size:.66rem}
+
+/* colors */
+.sws{display:flex;gap:.5rem;margin-top:.2rem}
+.sws .c{flex:1;height:46px;border-radius:7px;border:1px solid rgba(242,238,232,.18);
+  display:flex;align-items:flex-end;padding:5px;font-size:.5rem;letter-spacing:.04em}
+.ratio{display:flex;height:16px;border-radius:5px;overflow:hidden;margin-top:.6rem;font-size:.5rem}
+.ratio div{display:flex;align-items:center;justify-content:center;color:#0b0b0b;font-weight:700}
+
+/* type */
+.typebig{font-family:var(--display);text-transform:uppercase;font-size:1.5rem;line-height:.9;margin-top:.15rem}
+.fonts{margin-top:.5rem;font-size:.66rem;color:var(--gray)}
+.fonts b{color:var(--white);font-weight:600}
+
+/* voice tags */
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.3rem}
+.tags span{border:1px solid rgba(242,238,232,.25);border-radius:20px;padding:.22rem .6rem;font-size:.58rem;font-weight:600}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:.3rem}
+.facts div{text-align:left}
+.facts .n{font-family:var(--display);font-size:1.9rem;color:var(--orange);line-height:1}
+.facts .t{font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-top:.2rem}
+
+/* footer band */
+.foot{background:var(--black);padding:3.4% 7%;position:relative;z-index:2;
+  display:flex;justify-content:space-between;align-items:center}
+.foot .big{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.1rem,3.4vw,1.9rem);line-height:.95}
+.foot .meta{text-align:right;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr;gap:6% 0}
+  .sheet{aspect-ratio:auto}
+}
+@media print{
+  body{padding:0;background:#fff}
+  .sheet{box-shadow:none;border-radius:0;width:100%;height:100%}
+  @page{size:A4;margin:0}
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- HEADER -->
+  <header class="head">
+    <p class="kicker">Brand One-Sheet · 2026</p>
+    <h1>BLY<span class="accent">'</span>S</h1>
+    <div class="tab"></div>
+    <p class="sub">Home of the Original Philly · Cheesesteaks · Burgers · Fries · Est. 2021</p>
+  </header>
+
+  <!-- BODY -->
+  <div class="grid">
+
+    <div class="block">
+      <div class="lab">Brand Story</div>
+      <p>Authentic Philly street food, built for Saudi Arabia. Born in 2021 from a sandwich perfected at home — no shortcuts, no compromises, 100% Black Angus in every bite.</p>
+    </div>
+
+    <div class="block">
+      <div class="lab">Four Pillars</div>
+      <div class="pillars">
+        <div><b>Authenticity</b><span>Real Philly methods</span></div>
+        <div><b>Quality</b><span>Black Angus, in-house</span></div>
+        <div><b>Urban Culture</b><span>Riyadh nights energy</span></div>
+        <div><b>Community</b><span>Built for sharing</span></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="lab">Color System</div>
+      <div class="sws">
+        <div class="c" style="background:#002D12">#002D12</div>
+        <div class="c" style="background:#FF9518;color:#0b0b0b">#FF9518</div>
+        <div class="c" style="background:#F2EEE8;color:#0b0b0b">#F2EEE8</div>
+        <div class="c" style="background:#0B0B0B">#0B0B0B</div>
+      </div>
+      <div class="ratio">
+        <div style="flex:60;background:#002D12;color:#fff;border:1px solid rgba(242,238,232,.15)">60</div>
+        <div style="flex:25;background:#0B0B0B;color:#fff">25</div>
+        <div style="flex:10;background:#F2EEE8">10</div>
+        <div style="flex:5;background:#FF9518">5</div>
+      </div>
+      <p class="muted" style="font-size:.6rem;margin-top:.4rem">Green dominant · Orange accent only</p>
+    </div>
+
+    <div class="block">
+      <div class="lab">Typography</div>
+      <div class="typebig">ANTON <span class="accent">DISPLAY</span></div>
+      <div class="fonts">
+        <b>Anton</b> — display headlines &nbsp;·&nbsp; <b>Inter</b> — body &amp; UI<br>
+        <b>Cairo</b> — Arabic · <span style="font-family:var(--ar)">بيليز · الأصلي · طازج من يومه</span>
+      </div>
+    </div>
+
+    <div class="block" style="grid-column:1 / -1">
+      <div class="lab">Brand Voice — Bold but never arrogant</div>
+      <div class="tags">
+        <span>Real Beef. Real Cheese.</span>
+        <span>Made Fresh Daily</span>
+        <span>Loaded with Flavor</span>
+        <span>Built Different</span>
+        <span>Riyadh Nights</span>
+        <span>Street Culture Riyadh</span>
+      </div>
+    </div>
+
+    <div class="block" style="grid-column:1 / -1">
+      <div class="lab">By the Numbers</div>
+      <div class="facts">
+        <div><div class="n">2021</div><div class="t">Founded</div></div>
+        <div><div class="n">6</div><div class="t">Locations</div></div>
+        <div><div class="n">100%</div><div class="t">Black Angus</div></div>
+        <div><div class="n">3</div><div class="t">Cities · RUH · Khobar · Dammam</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="big">Home of the original<br><span class="accent">Philly cheesesteak.</span></div>
+    <div class="meta">blys.com.sa<br>@blys.sa<br>Riyadh · Khobar · Dammam</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
